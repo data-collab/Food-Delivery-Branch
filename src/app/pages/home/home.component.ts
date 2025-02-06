@@ -13,9 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
 export class HomeComponent {
 
   constructor(private router: Router) {
-
   }
-
+  
   featuredMenus = [
     {
       name: 'Grilled Chicken Salad',
