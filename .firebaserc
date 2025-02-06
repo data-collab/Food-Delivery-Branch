@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "food-delivery-branch",
+    "prod": "food-delivery-branch",
+    "staging": "food-delivery-branch"
+  },
+  "targets": {},
+  "etags": {}
+}

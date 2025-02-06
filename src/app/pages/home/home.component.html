@@ -1,0 +1,90 @@
+<div class="container-fluid home-page">
+  <!-- Hero Section -->
+  <section class="hero text-center">
+    <div class="hero-content">
+      <h1 class="hero-title animate__animated animate__fadeInDown">
+        {{ 'HOME.HERO.TITLE' | translate }}
+      </h1>
+      <p class="hero-subtitle animate__animated animate__fadeInUp">
+        {{ 'HOME.HERO.SUBTITLE' | translate }}
+      </p>
+      <button class="btn btn-primary btn-lg mt-3 animate__animated animate__zoomIn">
+        {{ 'HOME.HERO.BUTTON' | translate }}
+      </button>
+    </div>
+  </section>
+
+  <!-- Featured Menus Section -->
+  <section class="featured-menus py-5 text-center">
+    <h2 class="section-title">{{ 'HOME.MENUS.TITLE' | translate }}</h2>
+    <p class="section-subtitle">{{ 'HOME.MENUS.SUBTITLE' | translate }}</p>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let menu of featuredMenus">
+        <div class="card menu-card shadow-sm">
+          <img [src]="menu.image" class="card-img-top" [alt]="menu.name" />
+          <div class="card-body">
+            <h5 class="card-title">{{ menu.name }}</h5>
+            <p class="card-text">{{ menu.description }}</p>
+            <button class="btn btn-secondary">
+              {{ 'HOME.MENUS.VIEW_DETAILS' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features py-5">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <i class="bi bi-truck feature-icon"></i>
+        <h5 class="feature-title">{{ 'HOME.FEATURES.FAST_DELIVERY.TITLE' | translate }}</h5>
+        <p class="feature-description">{{ 'HOME.FEATURES.FAST_DELIVERY.DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-star-fill feature-icon"></i>
+        <h5 class="feature-title">{{ 'HOME.FEATURES.TOP_QUALITY.TITLE' | translate }}</h5>
+        <p class="feature-description">{{ 'HOME.FEATURES.TOP_QUALITY.DESCRIPTION' | translate }}</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-heart-fill feature-icon"></i>
+        <h5 class="feature-title">{{ 'HOME.FEATURES.CUSTOMER_LOVE.TITLE' | translate }}</h5>
+        <p class="feature-description">{{ 'HOME.FEATURES.CUSTOMER_LOVE.DESCRIPTION' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials py-5 text-center">
+    <h2 class="section-title">{{ 'HOME.TESTIMONIALS.TITLE' | translate }}</h2>
+    <p class="section-subtitle">{{ 'HOME.TESTIMONIALS.SUBTITLE' | translate }}</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="testimonial-card shadow-sm">
+          <p class="testimonial-text">{{ 'HOME.TESTIMONIALS.TESTIMONIAL_1.TEXT' | translate }}</p>
+          <p class="testimonial-author">{{ 'HOME.TESTIMONIALS.TESTIMONIAL_1.AUTHOR' | translate }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card shadow-sm">
+          <p class="testimonial-text">{{ 'HOME.TESTIMONIALS.TESTIMONIAL_2.TEXT' | translate }}</p>
+          <p class="testimonial-author">{{ 'HOME.TESTIMONIALS.TESTIMONIAL_2.AUTHOR' | translate }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card shadow-sm">
+          <p class="testimonial-text">{{ 'HOME.TESTIMONIALS.TESTIMONIAL_3.TEXT' | translate }}</p>
+          <p class="testimonial-author">{{ 'HOME.TESTIMONIALS.TESTIMONIAL_3.AUTHOR' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section class="cta text-center py-5">
+    <h2 class="cta-title">{{ 'HOME.CTA.TITLE' | translate }}</h2>
+    <p class="cta-subtitle">{{ 'HOME.CTA.SUBTITLE' | translate }}</p>
+    <button (click)="goToMenuPage()" class="btn btn-primary btn-lg">{{ 'HOME.CTA.BUTTON' | translate }}</button>
+  </section>
+</div>

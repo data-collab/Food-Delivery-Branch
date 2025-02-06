@@ -1,0 +1,134 @@
+{
+    "ABOUT": {
+      "TITLE": "About Us",
+      "HERO_DESCRIPTION": "Providing delicious, high-quality meals to Georgia's biggest companies and hotels.",
+      "WHY_TITLE": "Why We Do It",
+      "WHY_CARD1_TITLE": "Passion for Food",
+      "WHY_CARD1_DESCRIPTION": "We believe great food brings people together.",
+      "WHY_CARD2_TITLE": "Serve Communities",
+      "WHY_CARD2_DESCRIPTION": "We provide top-notch food service to large organizations.",
+      "WHY_CARD3_TITLE": "Build Trust",
+      "WHY_CARD3_DESCRIPTION": "Establishing strong client relationships with our reliability.",
+      "TIMELINE_TITLE": "Since When",
+      "TIMELINE_ITEM1_TITLE": "2020 - The Beginning",
+      "TIMELINE_ITEM1_DESCRIPTION": "We started our journey with a small kitchen and big dreams.",
+      "TIMELINE_ITEM2_TITLE": "2022 - Growing Strong",
+      "TIMELINE_ITEM2_DESCRIPTION": "Expanded to serve more clients, including major hotels and casinos.",
+      "TIMELINE_ITEM3_TITLE": "Today - Trusted Partner",
+      "TIMELINE_ITEM3_DESCRIPTION": "Serving as a trusted food delivery partner across Georgia.",
+      "CTA_BUTTON": "Explore Our Menus"
+    },
+    "HOME": {
+      "HERO": {
+        "TITLE": "Welcome to LunchLine",
+        "SUBTITLE": "Fresh, Tasty, and Delivered Right to You",
+        "BUTTON": "Order Now"
+      },
+      "MENUS": {
+        "TITLE": "Our Featured Menus",
+        "SUBTITLE": "Explore our most popular dishes, crafted with love and care.",
+        "VIEW_DETAILS": "View Details"
+      },
+      "FEATURES": {
+        "FAST_DELIVERY": {
+          "TITLE": "Fast Delivery",
+          "DESCRIPTION": "We ensure your food is delivered fresh and on time, every time."
+        },
+        "TOP_QUALITY": {
+          "TITLE": "Top Quality",
+          "DESCRIPTION": "Our chefs use the best ingredients to create dishes you'll love."
+        },
+        "CUSTOMER_LOVE": {
+          "TITLE": "Customer Love",
+          "DESCRIPTION": "Thousands of happy customers trust us for their meals every day."
+        }
+      },
+      "TESTIMONIALS": {
+        "TITLE": "What Our Customers Say",
+        "SUBTITLE": "Real feedback from people who love our food.",
+        "TESTIMONIAL_1": {
+          "TEXT": "The food is always fresh and tastes amazing. Highly recommend!",
+          "AUTHOR": "- John Doe"
+        },
+        "TESTIMONIAL_2": {
+          "TEXT": "Great service and excellent quality. Best delivery in town!",
+          "AUTHOR": "- Jane Smith"
+        },
+        "TESTIMONIAL_3": {
+          "TEXT": "Quick delivery and delicious meals. Can't ask for more.",
+          "AUTHOR": "- Emily Brown"
+        }
+      },
+      "CTA": {
+        "TITLE": "Ready to Order?",
+        "SUBTITLE": "Browse our menu and place your order today!",
+        "BUTTON": "View Menu"
+      }
+    },
+    "MENUS": {
+      "TITLE": "Our Delicious Menus",
+      "SUBTITLE": "Explore a variety of freshly prepared dishes",
+      "ORDER_NOW": "Order Now",
+      "BREAKFAST": "Breakfast",
+      "LUNCH": "Lunch",
+      "DINNER": "Dinner",
+      "BEVERAGES": "Beverages",
+      "ALL": "All"
+    },
+    "CONTACT": {
+      "TITLE": "Contact Us",
+      "LOCATION": "Our Location",
+      "DESCRIPTION": "We’d love to hear from you!",
+      "FORM": {
+        "TITLE": "Send Us a Message",
+        "NAME": "Your Name",
+        "NAME_PLACEHOLDER": "Enter your full name",
+        "EMAIL": "Your Email",
+        "EMAIL_PLACEHOLDER": "Enter your email address",
+        "MESSAGE": "Your Message",
+        "MESSAGE_PLACEHOLDER": "Type your message here...",
+        "SUBMIT": "Submit"
+      },
+      "INFO": {
+        "TITLE": "Our Contact Information",
+        "ADDRESS": "123 Main Street, Tbilisi, Georgia",
+        "EMAIL": "info@fooddelivery.com",
+        "PHONE": "+995 555 123 456"
+      }
+    },
+    "PRIVACY_POLICY": {
+    "TITLE": "Privacy Policy",
+    "INTRO": "We value your privacy and are committed to protecting your personal data. Below is an outline of how we handle your information when you contact us.",
+    "INFORMATION": "Information We Collect",
+    "PERSONAL_INFO": "Personal Information: When you contact us, we collect personal information such as your name and email address.",
+    "USAGE_DATA": "Usage Data: We may collect information on how you interact with our website, such as the pages you visit and actions you perform.",
+    "COOKIES": "Cookies and Tracking Technologies: We may use cookies to enhance your experience on our website. Cookies help us analyze website traffic and personalize your experience.",
+    "EMAIL_CONFIDENTIALITY": "Email Confidentiality",
+    "EMAIL_CONFIDENTIALITY_DESC": "We respect the confidentiality of your email and personal information. When you provide your email to contact us, we will never share it with third parties. Your email will only be used to respond to your inquiry and provide relevant information.",
+    "USE": "How We Use Your Information",
+    "USE_1": "We use your personal information to respond to your inquiries and provide assistance when requested.",
+    "USE_2": "We may use your email address to send you important updates or information related to our services.",
+    "USE_3": "We do not use your personal information for marketing purposes unless you have explicitly agreed to receive such communications.",
+    "RIGHTS": "Your Data Protection Rights",
+    "RIGHTS_1": "You have the right to access, update, or delete your personal data that we hold.",
+    "RIGHTS_2": "You have the right to object to the processing of your personal data in certain circumstances.",
+    "RIGHTS_3": "You have the right to withdraw your consent to the use of your personal information at any time.",
+    "CHANGES": "Changes to This Privacy Policy",
+    "CHANGES_DESC": "We may update our Privacy Policy from time to time. Any changes will be posted on this page, and the date of the last revision will be updated at the bottom of the page."
+  },
+  
+    "TERMS_OF_SERVICE": {
+      "TITLE": "Terms of Service",
+      "INTRO": "Welcome to Lunch Line. Please read our terms of service carefully before using our website.",
+      "SERVICE_AVAILABILITY": "Service Availability",
+      "SERVICE_AVAILABILITY_DESC": "Our website provides information about the Lunch Line services and does not offer transactional services directly through this site. You can always contact us for more details.",
+      "USER_RESPONSIBILITIES": "User Responsibilities",
+      "USER_RESPONSIBILITIES_DESC": "By using this website, you agree not to misuse or disrupt the services provided. You agree to respect the privacy and intellectual property of Lunch Line and other users.",
+      "LIMITATION_OF_LIABILITY": "Limitation of Liability",
+      "LIMITATION_OF_LIABILITY_DESC": "Lunch Line is not responsible for any indirect, incidental, or consequential damages arising from the use of this site or reliance on its content.",
+      "CHANGES_TO_TERMS": "Changes to Terms",
+      "CHANGES_TO_TERMS_DESC": "Lunch Line reserves the right to update or change these Terms of Service at any time. All changes will be posted here and will take effect immediately after publication."
+    }
+  
+  }
+  

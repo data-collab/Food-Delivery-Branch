@@ -1,0 +1,105 @@
+.menus-page {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  
+    .menus-header {
+      h1 {
+        font-size: 3rem;
+        color: #333;
+        animation: slideInDown 1s ease-out;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        color: #666;
+        animation: fadeIn 1.5s ease-out;
+      }
+    }
+  
+    .filters {
+      button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+  
+        &.active {
+          background-color: #ff5722;
+          color: white;
+        }
+  
+        &:hover {
+          transform: scale(1.05);
+          background-color: #ff2d22;
+          color: white;
+        }
+      }
+    }
+  
+    .menus-grid {
+      .menu-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 10px;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+  
+        img {
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px 10px 0 0;
+        }
+  
+        .card-body {
+          text-align: center;
+  
+          .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+          }
+  
+          .card-text {
+            font-size: 1rem;
+            color: #555;
+            margin: 10px 0;
+          }
+  
+          .card-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 10px;
+          }
+  
+          .btn-primary {
+            background-color: #ff5722;
+            border: none;
+            padding: 8px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+  
+            &:hover {
+              background-color: #ff5722;
+            }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .menu-card img {
+        height: 150px;
+      }
+  
+      .filters button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  

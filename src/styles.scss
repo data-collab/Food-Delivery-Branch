@@ -1,0 +1,18 @@
+$primary-color: #ff5722; // Vibrant Orange
+$secondary-color: #ff9800; // Appetizing Yellow
+$background-color: #f5f5f5; // Light Gray
+$text-color: #333; // Dark Text
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  padding: 0;
+  margin: 0;
+}
+.alertify-notifier .ajs-message {
+  color: white !important;  /* Change text color to white */
+  font-weight: bold !important;  /* Make text bold */
+  font-size: 16px;  /* Optional: adjust font size */
+  padding: 10px;  /* Optional: adjust padding */
+}

@@ -1,0 +1,82 @@
+<footer class="footer bg-dark text-white py-4">
+  <div class="container">
+    <div class="row">
+      <!-- Company Info -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h5 class="footer-title">About Us</h5>
+        <p>
+          At FoodDelivery, we specialize in delivering freshly prepared meals to top companies, hotels, and casinos in Georgia. Your satisfaction is our priority.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/menus">Menus</a></li>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Policies -->
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h5 class="footer-title">Policies</h5>
+        <ul class="footer-links list-unstyled">
+          <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+          <li><a routerLink="/terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h5 class="footer-title">Contact Us</h5>
+        <p>Phone: +995 599 874 529</p>
+        <p>Email: {{ email }}</p>
+        <p>Address: 4-22 Tskneti Hwy, Tbilisi, Georgia</p>
+        <!-- Google Map -->
+        <div class="map-container">
+          <app-google-map
+            [latitude]="41.709024"
+            [longitude]="44.731803"
+            [zoom]="15"
+          ></app-google-map>
+        </div>
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <!-- Bottom Section -->
+    <div class="row align-items-center">
+      <div class=" text-center text-md-start">
+        <p class="mb-0 text-center">&copy; 2024 FoodDelivery. All rights reserved.</p>
+      </div>
+      <!-- <div class="col-md-6 text-center text-md-end">
+        <ul class="social-links list-inline">
+          <li class="list-inline-item">
+            <a href="https://facebook.com" target="_blank">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://twitter.com" target="_blank">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://instagram.com" target="_blank">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://linkedin.com" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </div>
+</footer>

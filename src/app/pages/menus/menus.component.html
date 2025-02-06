@@ -1,0 +1,48 @@
+<div class="container menus-page">
+    <!-- Page Header -->
+    <section class="menus-header text-center py-5">
+      <h1>{{ 'MENUS.TITLE' | translate }}</h1>
+      <p class="lead">{{ 'MENUS.SUBTITLE' | translate }}</p>
+    </section>
+  
+    <!-- Filters Section -->
+    <section class="filters text-center mb-4">
+      <button
+        *ngFor="let category of menuCategories"
+        class="btn btn-outline-primary m-2"
+        [class.active]="selectedCategory === category"
+        (click)="filterMenus(category)"
+      >
+        {{ category | translate }}
+      </button>
+    </section>
+  
+    <!-- Menus Grid -->
+    <section class="menus-grid">
+      <div  class="row">
+        <div
+        style="margin-bottom: 30px;"
+          class="col-md-4"
+          *ngFor="let menu of filteredMenus"
+          [@fadeInAnimation]
+        >
+          <div class="card menu-card shadow-sm">
+            <img
+              [src]="menu.image"
+              class="card-img-top"
+              [alt]="menu.name"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ menu.name }}</h5>
+              <p class="card-text">{{ menu.description }}</p>
+              <p class="card-price">{{ menu.price | currency }}</p>
+              <button class="btn btn-primary">
+                {{ 'MENUS.ORDER_NOW' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
