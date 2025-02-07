@@ -81,10 +81,6 @@
 /* Language Switcher */
 .language-switcher {
   display: flex;
-  flex-direction: column;
-  width: 200px;
-  justify-content: center;
-  margin: auto;
 
   button {
     padding: 5px 10px;
@@ -128,7 +124,10 @@
   }
 
   .language-switcher {
-    margin-top: 0.5rem;
+    flex-direction: column;
+    width: 200px;
+    justify-content: center;
+    margin: auto;
   }
 }
 
