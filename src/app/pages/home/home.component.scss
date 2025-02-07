@@ -69,6 +69,9 @@
     }
 
     .menu-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;  /* Ensure all cards have the same height */
       transition: transform 0.3s, box-shadow 0.3s;
       border-radius: 10px;
       overflow: hidden;
@@ -85,6 +88,9 @@
       }
 
       .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Make card body grow to fill space */
         background-color: #ffffff;
         padding: 20px;
 
@@ -100,6 +106,7 @@
         }
 
         .btn-secondary {
+          margin-top: auto;  /* Ensures button stays at the bottom */
           background-color: #ff5722;
           border: none;
           color: #fff;
@@ -204,6 +211,120 @@
         transform: scale(0.95);
       }
     }
+  }
+}
+
+/* Modal Styling with 3D Animation */
+.modal-content {
+  border-radius: 20px;
+  transform: perspective(1200px) rotateY(0);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: perspective(1200px) rotateY(10deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #ff5722, #ff784e); 
+  color: white;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 20px 30px;
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-body {
+  background-color: #f8f9fa;
+  padding: 30px;
+  font-size: 1.1rem;
+  color: #333;
+  border-radius: 0 0 20px 20px;
+
+  .modal-image-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .modal-img {
+    border-radius: 10px;
+    max-width: 80%;
+    height: auto;
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .modal-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .meal-heading {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      font-size: 1rem;
+      margin: 10px 0;
+      color: #666;
+      position: relative;
+      padding-left: 25px;
+      font-weight: normal;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #ff5722;
+      font-size: 20px;
+    }
+  }
+}
+
+.modal.fade .modal-dialog {
+  transform: scale(0.7);
+  animation: scaleUp 0.5s ease-in-out forwards;
+}
+
+/* Smooth animations for modal */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ff784e;
   }
 }
 

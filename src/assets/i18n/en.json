@@ -27,7 +27,8 @@
       "MENUS": {
         "TITLE": "Our Featured Menus",
         "SUBTITLE": "Explore our most popular dishes, crafted with love and care.",
-        "VIEW_DETAILS": "View Details"
+        "VIEW_DETAILS": "View Details",
+        "NO_MENUS": "Menu Not Found"
       },
       "FEATURES": {
         "FAST_DELIVERY": {
@@ -128,7 +129,16 @@
       "LIMITATION_OF_LIABILITY_DESC": "Lunch Line is not responsible for any indirect, incidental, or consequential damages arising from the use of this site or reliance on its content.",
       "CHANGES_TO_TERMS": "Changes to Terms",
       "CHANGES_TO_TERMS_DESC": "Lunch Line reserves the right to update or change these Terms of Service at any time. All changes will be posted here and will take effect immediately after publication."
-    }
+    },
+    "MODAL": {
+    "DESCRIPTION": "Description",
+    "MEALS": "Meals",
+    "BREAKFAST": "Breakfast",
+    "LUNCH": "Lunch",
+    "DINNER": "Dinner",
+    "APPETIZER": "Appetizer",
+    "SOUP": "Soup"
+  }
   
   }
   

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { log } from 'console';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ export class TranslationService {
 
   // Set the active language
   setLanguage(language: string): void {
+    console.log('at first: ', language)
     this.translate.setDefaultLang(language);
     this.translate.use(language);
   }

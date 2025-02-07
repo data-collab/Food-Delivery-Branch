@@ -1,8 +1,6 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { HttpRequest, HttpEvent } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpEvent, HttpRequest, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
@@ -15,6 +13,9 @@ import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
+import { environment } from '../environments/environments';
 
 // Define a modern functional interceptor
 function authInterceptor(req: HttpRequest<any>, next: (req: HttpRequest<any>) => Observable<HttpEvent<any>>): Observable<HttpEvent<any>> {
@@ -33,9 +34,12 @@ export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideDatabase(() => getDatabase()), // Ensure database is provided here
     // Router configuration
     provideRouter(routes),
-    importProvidersFrom(BrowserAnimationsModule),
+
     // Translation setup
     importProvidersFrom(
       TranslateModule.forRoot({
@@ -53,17 +57,6 @@ export const appConfig: ApplicationConfig = {
     ),
 
     // Firebase services
-    provideFirebaseApp(() =>
-      initializeApp({
-        projectId: 'food-delivery-branch',
-        appId: '1:1044596418353:web:40e6656f700566e79f3210',
-        storageBucket: 'food-delivery-branch.firebasestorage.app',
-        apiKey: 'AIzaSyCDd3jTMNb-jNW84AwrYHh0ffXLyR2sD60',
-        authDomain: 'food-delivery-branch.firebaseapp.com',
-        messagingSenderId: '1044596418353',
-        measurementId: 'G-25Y1W0NX5T',
-      })
-    ),
     provideAuth(() => getAuth()),
     provideAnalytics(() => getAnalytics()),
     provideFirestore(() => getFirestore()),
@@ -71,5 +64,8 @@ export const appConfig: ApplicationConfig = {
 
     // Angular optimizations
     provideZoneChangeDetection({ eventCoalescing: true, runCoalescing: true }),
+
+    // Import animations module
+    importProvidersFrom(BrowserAnimationsModule),
   ],
 };

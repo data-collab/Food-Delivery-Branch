@@ -1,52 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <!-- <a class="navbar-brand" routerLink="/">Shota's Menu</a> -->
-      <div class="navbar-brand">
-        <img style="cursor: pointer;" routerLink="/" src="https://firebasestorage.googleapis.com/v0/b/food-delivery-branch.firebasestorage.app/o/red%20logo.png?alt=media&token=9a70e372-6790-4576-a66b-bbd1f0a91138" alt="Company Logo" class="navbar-logo" />
-      </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/menus" routerLinkActive="active">Menus</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-          </li>
-        </ul>
-            <!-- Language Switching -->
-    <div class="language-switcher">
-      <button    
-       [class.selected]="currentLanguage === 'en'"
-      mat-button (click)="chanLanguage('en')"
-      >
-      EN
-      </button>
-      <button
-        [class.selected]="currentLanguage === 'ge'"
-        mat-button
-        (click)="chanLanguage('ge')"
-        >
-        GE
-      </button> 
+  <div class="container">
+    <!-- Logo -->
+    <div class="navbar-brand">
+      <img style="cursor: pointer;" routerLink="/" src="https://firebasestorage.googleapis.com/v0/b/food-delivery-branch.firebasestorage.app/o/red%20logo.png?alt=media&token=9a70e372-6790-4576-a66b-bbd1f0a91138" alt="Company Logo" class="navbar-logo" />
     </div>
+
+    <!-- Navbar Toggler Button -->
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Navbar Menu -->
+    <div [class.collapse]="!isNavbarCollapsed" class="navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/menus" routerLinkActive="active">Menus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Language Switching -->
+      <div class="language-switcher">
+        <button [class.selected]="currentLanguage === 'en'" mat-button (click)="chanLanguage('en')">
+          EN
+        </button>
+        <button [class.selected]="currentLanguage === 'ge'" mat-button (click)="chanLanguage('ge')">
+          GE
+        </button>
       </div>
     </div>
-  </nav>
-  
+  </div>
+</nav>

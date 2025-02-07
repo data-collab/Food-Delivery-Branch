@@ -1,39 +1,85 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { DatabaseService } from '../../services/database.service';  // Import the DatabaseService
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) {
+  featuredMenus: any[] = [];  // Array to store fetched menu items
+  selectedMenu: any = null;    // Store the selected menu for the modal
+  currentLang: string = 'en'; // Default language
+
+  constructor(
+    private router: Router,
+    private dbService: DatabaseService, 
+    private translateService: TranslateService
+  ) {}
+
+  ngOnInit(): void {
+    // Fetch current language from ngx-translate
+    this.currentLang = this.translateService.currentLang || 'en';
+    
+    // Fetch menus from Firebase and process them
+    this.fetchMenus();
+
+    // Listen for language change events to update menu content
+    this.translateService.onLangChange.subscribe((event) => {
+      this.currentLang = event.lang;
+      this.updateMenuContent();  // Update menus when language changes
+    });
   }
-  
-  featuredMenus = [
-    {
-      name: 'Grilled Chicken Salad',
-      image: 'https://www.shutterstock.com/image-photo/classic-hamburger-stock-photo-isolated-600nw-2282033179.jpg',
-      description: 'A delicious mix of fresh greens and grilled chicken.',
-    },
-    {
-      name: 'Pasta Carbonara',
-      image: 'https://i.ytimg.com/vi/iQ38VKAjQgo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBYeSca3xOzPVWec6G-I6XqaZ8z4Q',
-      description: 'Classic Italian pasta with creamy sauce and bacon.',
-    },
-    {
-      name: 'Vegan Bowl',
-      image: 'https://www.allrecipes.com/thmb/DOhcP7hAGP_ams-a-M8A-16TeK4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-161469-the-best-ever-chicken-nuggets-DDMFS-4x3-e0f5af0ce26241d888967904f66962c7.jpg',
-      description: 'Healthy bowl with quinoa, veggies, and avocado.',
-    },
-  ];
 
-  goToMenuPage() {
-    this.router.navigate(['/menus']); // Replace '/new-page' with your target route
+  // Fetch menus from Firebase and update content based on the current language
+  fetchMenus(): void {
+    this.dbService.getFeaturedMenus().subscribe(
+      (menus) => {
+        this.featuredMenus = menus.map(menu => this.mapMenuData(menu));
+      },
+      (error) => {
+        console.error('Error fetching menus:', error);
+      }
+    );
+  }
+
+  // Method to map Firebase data to the current language
+  mapMenuData(menu: any): any {
+    return {
+      name: menu.name[this.currentLang] || menu.name['en'] || 'Default Name',
+      description: menu.description[this.currentLang] || menu.description['en'] || 'Default Description',
+      meals: {
+        breakfast: menu.meals.breakfast[this.currentLang] || menu.meals.breakfast['en'] || 'Default Breakfast',
+        lunch: menu.meals.lunch[this.currentLang] || menu.meals.lunch['en'] || 'Default Lunch',
+        dinner: menu.meals.dinner[this.currentLang] || menu.meals.dinner['en'] || 'Default Dinner',
+        appetizer: menu.meals.appetizer[this.currentLang] || menu.meals.appetizer['en'] || 'Default Appetizer',
+        soup: menu.meals.soup[this.currentLang] || menu.meals.soup['en'] || 'Default Soup'
+      },
+      image: menu.image || 'https://via.placeholder.com/150'
+    };
+  }
+
+  // Update menu content when the language changes
+  updateMenuContent(): void {
+    this.fetchMenus(); // Re-fetch the menus and apply translations
+  }
+
+  // Navigate to menu page
+  goToMenuPage(): void {
+    this.router.navigate(['/menus']);
+  }
+
+  // Open the menu details modal
+  openMenuDetails(menu: any): void {
+    this.selectedMenu = menu;  // Set the selected menu
+    const modal = new bootstrap.Modal(document.getElementById('menuDetailsModal') as HTMLElement);
+    modal.show();  // Show the modal
   }
 }

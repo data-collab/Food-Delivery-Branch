@@ -13,6 +13,8 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavbarComponent {
   currentLanguage: string = 'en'; // Default language
+  isNavbarCollapsed: boolean = false; // Default state for the navbar is collapsed
+
 
   constructor(
     private router: Router,
@@ -22,6 +24,10 @@ export class NavbarComponent {
       this.currentLanguage = this.translate.currentLang || 'en';
       console.log('hoo: ', this.currentLanguage);
 
+  }
+
+  toggleNavbar(): void {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
   chanLanguage(lang: string) {
     this.translationService.changeLanguage(lang);

@@ -8,9 +8,9 @@
       <p class="hero-subtitle animate__animated animate__fadeInUp">
         {{ 'HOME.HERO.SUBTITLE' | translate }}
       </p>
-      <button class="btn btn-primary btn-lg mt-3 animate__animated animate__zoomIn">
+      <!-- <button class="btn btn-primary btn-lg mt-3 animate__animated animate__zoomIn">
         {{ 'HOME.HERO.BUTTON' | translate }}
-      </button>
+      </button> -->
     </div>
   </section>
 
@@ -18,20 +18,26 @@
   <section class="featured-menus py-5 text-center">
     <h2 class="section-title">{{ 'HOME.MENUS.TITLE' | translate }}</h2>
     <p class="section-subtitle">{{ 'HOME.MENUS.SUBTITLE' | translate }}</p>
-    <div class="row g-4">
+    
+    <div *ngIf="featuredMenus.length > 0; else noMenus" class="row g-4">
       <div class="col-md-4" *ngFor="let menu of featuredMenus">
         <div class="card menu-card shadow-sm">
           <img [src]="menu.image" class="card-img-top" [alt]="menu.name" />
           <div class="card-body">
             <h5 class="card-title">{{ menu.name }}</h5>
             <p class="card-text">{{ menu.description }}</p>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" (click)="openMenuDetails(menu)">
               {{ 'HOME.MENUS.VIEW_DETAILS' | translate }}
             </button>
           </div>
         </div>
       </div>
     </div>
+  
+    <!-- Template to show if no menus are found -->
+    <ng-template #noMenus>
+      <p style="font-size: 25px; font-weight: bold; color: red;">{{ 'HOME.MENUS.NO_MENUS' | translate }}</p>
+    </ng-template>
   </section>
 
   <!-- Features Section -->
@@ -88,3 +94,41 @@
     <button (click)="goToMenuPage()" class="btn btn-primary btn-lg">{{ 'HOME.CTA.BUTTON' | translate }}</button>
   </section>
 </div>
+
+<!-- Modal for displaying the menu details -->
+
+<!-- Modal for displaying the menu details -->
+<div class="modal fade" id="menuDetailsModal" tabindex="-1" aria-labelledby="menuDetailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content shadow-lg rounded-3">
+      <div class="modal-header bg-gradient">
+        <h5 class="modal-title text-white" id="menuDetailsModalLabel">
+          {{ selectedMenu?.name | translate }} <!-- Dynamically translate name based on language -->
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Displaying the menu image -->
+        <div class="modal-image-container">
+          <img [src]="selectedMenu?.image" class="img-fluid rounded-3 modal-img" [alt]="selectedMenu?.name" />
+        </div>
+        <div class="modal-details">
+          <!-- Description of the menu -->
+          <p class="modal-description">
+            <strong>{{ 'MODAL.DESCRIPTION' | translate }}:</strong> {{ selectedMenu?.description }}
+          </p>
+          <!-- Meals section -->
+          <h5 class="meal-heading">{{ 'MODAL.MEALS' | translate }}:</h5>
+          <ul>
+            <li><strong>{{ 'MODAL.BREAKFAST' | translate }}:</strong> {{ selectedMenu?.meals?.breakfast }}</li>
+            <li><strong>{{ 'MODAL.LUNCH' | translate }}:</strong> {{ selectedMenu?.meals?.lunch }}</li>
+            <li><strong>{{ 'MODAL.DINNER' | translate }}:</strong> {{ selectedMenu?.meals?.dinner }}</li>
+            <li><strong>{{ 'MODAL.APPETIZER' | translate }}:</strong> {{ selectedMenu?.meals?.appetizer }}</li>
+            <li><strong>{{ 'MODAL.SOUP' | translate }}:</strong> {{ selectedMenu?.meals?.soup }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
